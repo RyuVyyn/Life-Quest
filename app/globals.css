@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    background-color: #0F0F14;
+    color: #E5E5E5;
+  }
+}
+
+@layer components {
+  .quest-card {
+    @apply bg-surface backdrop-blur-sm rounded-xl border border-surface/50 transition-all duration-300 hover:scale-[1.02] hover:bg-highlight-hover hover:shadow-lg;
+  }
+  
+  .quest-button {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  .quest-button-primary {
+    @apply bg-accent text-white hover:bg-accent/80;
+  }
+  
+  .quest-button-secondary {
+    @apply bg-accent-secondary text-primary hover:bg-accent-secondary/80;
+  }
+  
+  .quest-input {
+    @apply w-full px-4 py-3 bg-surface border border-surface/50 rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+  
+  .quest-select {
+    @apply w-full px-4 py-3 bg-surface border border-surface/50 rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(27, 27, 37, 0.8);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(90deg, #FFB400, #3B82F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .xp-gradient {
+    background: linear-gradient(90deg, #FFB400, #3B82F6);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 180, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 180, 0, 0.8);
+  }
+}
+
+@keyframes quest-complete {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes exp-gain {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes level-up {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(27, 27, 37, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 180, 0, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 180, 0, 0.7);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255, 180, 0, 0.25);
+  color: #0F0F14;
+}
+
+/* Focus styles */
+*:focus {
+  outline: none;
+}
+
+/* Animation classes */
+.animate-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-from-top-2 {
+  animation: slideInFromTop 0.2s ease-out;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quest status indicators */
+.quest-pending {
+  @apply border-surface/50 bg-surface/30;
+}
+
+.quest-in-progress {
+  @apply border-accent-secondary bg-accent-secondary/10;
+}
+
+.quest-completed {
+  @apply border-success bg-success/10;
+}
+
+/* Priority indicators */
+.priority-low {
+  @apply text-success;
+}
+
+.priority-medium {
+  @apply text-accent-secondary;
+}
+
+.priority-high {
+  @apply text-danger;
+}
+
+/* Category colors */
+.category-belajar {
+  @apply bg-quest-blue;
+}
+
+.category-kerja {
+  @apply bg-quest-gold;
+}
+
+.category-kesehatan {
+  @apply bg-quest-green;
+}
+
+.category-sosial {
+  @apply bg-quest-orange;
+}
+
+.category-hobi {
+  @apply bg-quest-blue;
+}
+
+.category-rumah {
+  @apply bg-danger;
+}
+
+.category-lainnya {
+  @apply bg-text-secondary;
+}
