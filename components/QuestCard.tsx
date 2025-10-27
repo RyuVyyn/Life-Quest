@@ -67,7 +67,7 @@ export default function QuestCard({ quest, onUpdate, onEdit }: QuestCardProps) {
       return;
     }
 
-    if ((newStatus as any) === 'completed' && quest.status !== 'completed') {
+    if ((newStatus as any) === 'completed') {
       setIsCompleting(true);
       
       // Update quest status
