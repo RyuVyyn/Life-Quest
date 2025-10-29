@@ -147,95 +147,93 @@ http://localhost:3000
 - Intelligent achievement system
 
   - Daily and weekly goal setting
+   yarn dev
+# ⚔️ Life Quest — Gamified Task Adventure
 
-**Adaptive UI**
+Life Quest turns your daily tasks into RPG-style quests. Complete quests to earn EXP, level up, unlock achievements, and stay motivated with an adaptive motivation engine and mood tracking.
 
-- Real-time interface updates### Installation
+## Description
 
-- Smart component rendering
+Life Quest is a local-first productivity app with a dark-fantasy aesthetic. It blends game mechanics (EXP, levels, streaks, achievements) with practical task management features to help you build momentum and maintain healthy habits.
 
-- Responsive layout adaptation### UI/UX Features
+## Technologies Used
 
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS (custom dark-fantasy palette)
+- React (Client components)
+- Lucide React (icons)
+- Browser localStorage for persistence
+- Custom event system for real-time UI updates
 
+## Features
 
-**Local Intelligence**- Responsive dark-fantasy themed interface1. **Clone the repository**
+### Core
+- Create, edit, and delete quests (tasks)
+- EXP rewards and dynamic leveling system
+- Daily/weekly goals and streak tracking
+- Achievements and progress tracking
+- Quest categories and priority levels
 
-- Browser-based data management
+### Motivation & Mood
+- Motivation Engine with three modes: Warrior, Healer, Rogue
+- Mood tracking after quest completion
+- Adaptive motivation messages based on activity
 
-- Real-time event processing- Smooth animations and transitions   ```bash
-
-- Offline-first architecture
-
-- Glass-morphic UI elements   git clone <repository-url>
-
-**Dark Fantasy Theming**
-
-- Smart color adaptation- Real-time updates without page reloads   cd life-quest
-
-- Dynamic visual elements
-
-- Intelligent contrast handling   ```
+### UX & Visuals
+- Dark-fantasy theme with glassmorphism
+- Responsive design and smooth animations
+- Real-time UI updates via custom events
 
 ## Setup Instructions
 
-2. **Install dependencies**
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-### Prerequisites   ```bash
+### Install & Run
 
-- Node.js 18 or higher   npm install
+```bash
+# Clone repository
+git clone https://github.com/RyuVyyn/Life-Quest.git
+cd "Life-Quest"
 
-- npm or yarn package manager   # or
+# Install dependencies
+npm install
 
-   yarn install
+# Start development server
+npm run dev
 
-### Installation Steps   ```
+# Open in browser
+http://localhost:3000
+```
 
-1. Clone the repository:
+### Build for Production
 
-   ```bash3. **Run the development server**
+```bash
+npm run build
+npm start
+```
 
-   git clone <repository-url>   ```bash
+## AI Support Explanation
 
-   cd life-quest   npm run dev
+Life Quest includes a few local AI-assisted and intelligent behaviors that improve UX and personalization while keeping privacy intact (no external data by default):
 
-   ```   # or
+### Adaptive Motivation
+- Learns patterns in user activity to adjust tone and timing of encouragements
+- Supports three personalities (Warrior/Healer/Rogue) to fit user preference
 
-   yarn dev
+### Smart Progression
+- EXP formulas adapt to quest difficulty and user progress
+- Streak computation uses local timezone to avoid day-boundary issues
 
-2. Install dependencies:   ```
+### Local Intelligence & UX
+- Real-time UI updates powered by a custom event system — changes to data are reflected immediately without full page reloads
+- Offline-first behavior: app works without network and stores everything in localStorage
 
-   ```bash
+---
 
-   npm install4. **Open your browser**
-
-   # or   Navigate to [http://localhost:3000](http://localhost:3000)
-
-   yarn install
-
-   ```## 🏗️ Project Structure
-
-
-
-3. Start the development server:```
-
-   ```bashlife-quest/
-
-   npm run dev├── app/                    # Next.js App Router pages
-
-   # or│   ├── page.tsx           # Dashboard (main page)
-
-   yarn dev│   ├── add/page.tsx       # Add new quest
-
-   ```│   ├── edit/[id]/page.tsx # Edit quest
-
-│   ├── layout.tsx         # Root layout
-
-4. Open your browser and navigate to:│   └── globals.css        # Global styles
-
-   - [http://localhost:3000](http://localhost:3000) (or next available port)├── components/            # React components
-
-│   ├── QuestCard.tsx      # Individual quest display
-
+For more details, see the `app/`, `components/`, `utils/` and `types/` folders. If you'd like, I can also add deployment instructions for Vercel or a contributing guide.
 ### Build for Production│   ├── QuestList.tsx      # Quest list container
 
 ```bash│   ├── QuestForm.tsx      # Add/edit quest form
