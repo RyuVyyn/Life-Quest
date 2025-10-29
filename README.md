@@ -63,18 +63,6 @@ http://localhost:3000
 npm run build
 npm start
 ```
-
-## Project Structure
-
-```
-Life-Quest/
-├── app/            # Next.js App Router pages and layout
-├── components/     # React UI components
-├── types/          # TypeScript interfaces and types
-├── utils/          # Utilities and localStorage handlers
-└── public/         # Static assets
-```
-
 ## Key Features Explained
 
 ### Adaptive Motivation
